@@ -1,0 +1,22 @@
+/* print.css — impressão amigável (relatório de homologação e tabelas) */
+@media print {
+  @page { margin: 14mm; }
+  body { background: #fff; color: #000; font-size: 11pt; }
+  .demo-bar, .app-header, .top-nav, .side-nav, .nav-drawer, .app-footer, .toast-region, .no-print, .btn, .icon-btn, .toolbar, .pagination, .skip-link, .hero__graphic { display: none !important; }
+  .admin-shell { display: block; }
+  .app-main { padding: 0; }
+  .container { max-width: none; padding: 0; }
+  .card, .table-wrap { border: 1px solid #999; box-shadow: none; break-inside: avoid; }
+  .table { min-width: 0; font-size: 9.5pt; }
+  .table thead th { background: #eee !important; color: #000; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .chip { border: 1px solid #000; background: #fff !important; color: #000 !important; }
+  .print-only { display: block !important; }
+  /* Quando um relatório estiver aberto em modal, imprime somente ele */
+  body.printing-modal > *:not(.modal-root) { display: none !important; }
+  body.printing-modal .modal-root { position: static; display: block; padding: 0; }
+  body.printing-modal .modal-backdrop, body.printing-modal .modal__foot, body.printing-modal .modal__head .icon-btn { display: none !important; }
+  body.printing-modal .modal { box-shadow: none; max-height: none; width: 100%; }
+  body.printing-modal .modal__body { overflow: visible; }
+  a { color: #000; text-decoration: none; }
+}
+.print-only { display: none; }

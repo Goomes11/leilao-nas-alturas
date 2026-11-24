@@ -1,0 +1,131 @@
+/* ==========================================================================
+   tokens.css — Design tokens do Leilão nas Alturas | Ambiente interno GOL
+   Fonte: "Template_Modelo_de_PPT_GOL" (slides "Paleta de Cores" e
+   "Variações da fonte GOL Sans"). Não adicione cores fora desta lista sem
+   registrar a justificativa no README.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   GOL Sans — estrutura pronta para os arquivos oficiais.
+   Coloque os .woff2 licenciados em /assets/fonts/ com os nomes abaixo e
+   remova o comentário do bloco. Enquanto os arquivos não existirem, a
+   aplicação usa Arial/Helvetica (fallback seguro, sem serviço externo).
+   --------------------------------------------------------------------------
+@font-face { font-family: "GOL Sans"; src: url("../fonts/GOLSans-Regular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "GOL Sans"; src: url("../fonts/GOLSans-Medium.woff2")  format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "GOL Sans"; src: url("../fonts/GOLSans-Bold.woff2")    format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "GOL Sans"; src: url("../fonts/GOLSans-XBold.woff2")   format("woff2"); font-weight: 800; font-style: normal; font-display: swap; }
+*/
+
+:root {
+  /* Paleta primária (PowerPoint, slide "Paleta de Cores (Primárias)") */
+  --gol-orange: #FF7020;
+  --gol-graphite: #37322D;
+  --gol-dark-gray: #65605B;
+  --gol-gray: #9A9187;
+  --gol-light-gray: #DAD0C5;
+  --gol-off-white: #FCF6F0;
+  --gol-white: #FFFFFF;
+  --gol-black: #000000;
+
+  /* Paleta secundária (PowerPoint, slide "Paleta de Cores (Secundárias)") */
+  --gol-dark-orange: #DB5014;
+  --gol-light-orange: #F9C78B;
+  --gol-brown: #8B734B;
+  --gol-yellow: #FFB414;
+  --gol-light-yellow: #FFE09F;
+  --gol-wine: #732846;
+  --gol-pink: #EF86A4;
+  --gol-light-pink: #F4D1DB;
+  --gol-moss: #195A55;
+  --gol-green: #009A8B;
+  --gol-light-green: #B3DBDB;
+  --gol-navy: #00324B;
+  --gol-blue: #007895;
+  --gol-light-blue: #C2DBEA;
+  --gol-red: #FF4F4F;
+
+  /* ---------------- Tokens semânticos ----------------
+     Contrastes calculados (WCAG 2.1):
+     Grafite sobre Laranja ........ 4,58:1  (AA texto normal) -> botão primário
+     Branco sobre Laranja ......... 2,85:1  (reprovado)       -> não usar
+     Cinza Escuro sobre Branco .... 6,2:1   (AA)              -> texto secundário
+     Cinza sobre Branco ........... 3,1:1   (reprovado p/ texto) -> só bordas/decoração
+     Musgo sobre Verde Claro ...... 5,3:1   (AA)              -> sucesso
+     Vinho sobre Rosa Claro ....... 7,1:1   (AA)              -> erro
+     Grafite sobre Amarelo Claro .. 9,9:1   (AA)              -> atenção
+     Azul Marinho sobre Azul Claro  10,6:1  (AA)              -> informação
+     Branco sobre Vinho ........... 9,9:1   (AA)              -> botão destrutivo
+     Laranja sobre Grafite ........ 4,58:1  (AA)              -> destaques no rodapé escuro
+  */
+  --color-bg: var(--gol-off-white);
+  --color-surface: var(--gol-white);
+  --color-surface-muted: #F7F1EA; /* mistura Off White + Cinza Claro (8%) para zebra/hover */
+  --color-text: var(--gol-graphite);
+  --color-text-muted: var(--gol-dark-gray);
+  --color-border: var(--gol-light-gray);
+  --color-border-strong: var(--gol-gray);
+  --color-brand: var(--gol-orange);
+  --color-brand-strong: var(--gol-dark-orange);
+  --color-brand-soft: #FFE8DA; /* tinta 15% do Laranja, só fundo */
+  --color-on-brand: var(--gol-graphite);
+  --color-focus: var(--gol-graphite);
+
+  --color-success-bg: #E3F1F1;
+  --color-success-border: var(--gol-green);
+  --color-success-text: var(--gol-moss);
+  --color-error-bg: #FBE9EE;
+  --color-error-border: var(--gol-red);
+  --color-error-text: var(--gol-wine);
+  --color-warning-bg: #FFF3D6;
+  --color-warning-border: var(--gol-yellow);
+  --color-warning-text: var(--gol-graphite);
+  --color-info-bg: #E6F0F6;
+  --color-info-border: var(--gol-blue);
+  --color-info-text: var(--gol-navy);
+  --color-danger: var(--gol-wine);
+
+  /* Tipografia */
+  --font-family: "GOL Sans", Arial, Helvetica, sans-serif;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+  --fw-xbold: 800;
+  --fs-xs: .75rem;
+  --fs-sm: .875rem;
+  --fs-md: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: 1.375rem;
+  --fs-2xl: 1.75rem;
+  --fs-3xl: 2.25rem;
+  --lh-tight: 1.2;
+  --lh-base: 1.5;
+
+  /* Espaçamento (base 4 px) */
+  --sp-1: 4px; --sp-2: 8px; --sp-3: 12px; --sp-4: 16px; --sp-5: 20px;
+  --sp-6: 24px; --sp-8: 32px; --sp-10: 40px; --sp-12: 48px; --sp-16: 64px;
+
+  /* Forma */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+  --shadow-sm: 0 1px 2px rgba(55, 50, 45, .06);
+  --shadow-md: 0 6px 20px rgba(55, 50, 45, .08);
+  --shadow-lg: 0 18px 48px rgba(55, 50, 45, .18);
+
+  /* Layout */
+  --container: 1200px;
+  --header-h: 72px;
+  --sidebar-w: 248px;
+  --touch: 44px;
+
+  /* Movimento */
+  --t-fast: 120ms;
+  --t-base: 200ms;
+  --ease: cubic-bezier(.2, .7, .2, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --t-fast: 0ms; --t-base: 0ms; }
+}
